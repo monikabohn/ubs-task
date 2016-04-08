@@ -1,0 +1,65 @@
+@import 'variables.less';
+@import 'mixins.less';
+
+body {
+  background: @bg-pink;
+  font-family: @font-arial;
+  font-size: @fs-default;
+}
+
+.main-left {
+  background: @bg-violet;
+  color: @fc-white;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+
+    > span {
+      display: inline-block;
+      top: 50%;
+      left: 50%;
+      position: absolute;
+      .transform-font(1.5,1,150%,0);
+    }
+}
+.main-right {
+  margin: 0 0 0 200px;
+}
+.top {
+  word-wrap: break-word;
+}
+
+.box {
+  width: 50%;
+  float: left;
+  text-align: center;
+  line-height: 1.5;
+  .transform-font(1,1.5,0,-150%);
+
+  &.box1 {
+    background: @bg-yellow;
+  }
+  &.box2 {
+    background: @bg-orange;
+  }
+  &.box3 {
+    background: @bg-red;
+  }
+  &.box4 {
+    background: @bg-brown;
+  }
+  &.box3, &.box4{
+    transform-origin: 0 -250%;
+  }
+}
+
+@media (min-width: @breakpoint-large) {
+  .box {
+    width: 25%;
+    &.box3, &.box4{
+      transform-origin: 0 -150%;
+    }
+  }
+}
